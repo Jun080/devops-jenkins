@@ -1,7 +1,6 @@
 services:
   jenkins:
     build: .
-    image: jenkins/jenkins:lts-jdk17
     container_name: jenkins-local
     user: root
     ports:
