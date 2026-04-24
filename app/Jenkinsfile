@@ -4,19 +4,25 @@ pipeline {
     stages {
         stage("Install") {
             steps {
-                sh 'npm ci'
+                dir('app') {
+                    sh 'npm ci'
+                }
             }
         }
         // LANCER LES TESTS ET LE LINT
         stage("Test") {
             steps {
-                sh 'npm test'
+                dir('app') {
+                    sh 'npm test'
+                }
             }
         }
 
         stage("Lint") {
             steps {
-                sh 'npm run lint'
+                dir('app') {
+                    sh 'npm run lint'
+                }
             }
         }
     }   
